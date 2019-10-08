@@ -4,12 +4,13 @@ import parse_url
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello():
     return render_template('index.html')
 
 
-@app.route('/form', methods=['GET','POST'])
+@app.route('/form', methods=['GET', 'POST'])
 def receive():
     url = request.form['yturl']
     p = parse_url.main(url)['formats']

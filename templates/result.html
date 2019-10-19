@@ -12,7 +12,7 @@
         원하는 화질의 링크 클릭 후, 동영상 다운로드를 누르시면 됩니다.
     </h2>
     <img src="{{s['thumbnail']}}" alt="youtube thumbnail" width="70%">
-    <h2>{{s['title']}} by {{s['uploader']}}</h2>
+    <h3>{{s['title']}} by {{s['uploader']}}</h3>
     {% for f in s['formats'] %}
     {% if f['filesize'] == None %}
     <a href={{f['url']}} download>{{f['format_note']}} {{f['ext']}}</a><br>

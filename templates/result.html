@@ -2,7 +2,7 @@
 
 <head>
     <title>MoseoriTube</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -11,7 +11,7 @@
     <h2>
         원하는 화질의 링크 클릭 후, 동영상 다운로드를 누르시면 됩니다.
     </h2>
-    <img src="{{s['thumbnail']}}" alt="youtube thumbnail">
+    <img src="{{s['thumbnail']}}" alt="youtube thumbnail" width="70%">
     <h2>{{s['title']}} by {{s['uploader']}}</h2>
     {% for f in s['formats'] %}
     {% if f['filesize'] == None %}

@@ -14,6 +14,12 @@ def hello():
 def receive():
     url = request.form['yturl']
     p = parse_url.main(url)['formats']
+    print(p)
+    for f in p:
+        if str(type(f['filesize'])) != '<class \'NoneType\'>':
+            f['filesize'] = int(f['filesize'])
+        else:
+            f['filesize'] = None
     return render_template('result.html', s=p)
 
 

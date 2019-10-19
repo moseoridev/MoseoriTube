@@ -12,7 +12,12 @@
         원하는 화질의 링크 클릭 후, 동영상 다운로드를 누르시면 됩니다.
     </h2>
     {% for f in s %}
-    <a href={{f['url']}} download>{{f['format_note']}} {{f['ext']}} - {{f['filesize'] / 1048576}}</a><br>
+    {% if f['filesize'] == None %}
+    <a href={{f['url']}} download>{{f['format_note']}} {{f['ext']}}</a><br>
+    {% else %}
+    <a href={{f['url']}} download>{{f['format_note']}} {{f['ext']}} - {{(f['filesize'] / 1048576)|round(2)}}MB</a><br>
+    {% endif %}
+
     {% endfor %}
 </body>
 

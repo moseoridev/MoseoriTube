@@ -8,4 +8,3 @@ def main(url):
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         meta = ydl.extract_info(url, download=False)
         return meta
-    

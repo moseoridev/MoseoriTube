@@ -13,13 +13,18 @@ def hello():
 @app.route('/form', methods=['GET', 'POST'])
 def receive():
     url = request.form['yturl']
-    p = parse_url.main(url)['formats']
-    print(p)
-    for f in p:
+    p = parse_url.main(url)
+    isVLC = any(word in request.headers.get('User-Agent')
+                for word in ['iPhone', 'iPad'])
+
+    for f in p['formats']:
         if str(type(f['filesize'])) != '<class \'NoneType\'>':
             f['filesize'] = int(f['filesize'])
         else:
             f['filesize'] = None
+        if isVLC:
+            f['url'] = 'vlc://' + f['url']
+
     return render_template('result.html', s=p)
 
 

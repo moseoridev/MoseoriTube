@@ -1,3 +1,3 @@
-flask
-youtube_dl
-gunicorn
+flask>=1.1.1
+youtube_dl>=2020.1.1
+gunicorn>=20.0.4

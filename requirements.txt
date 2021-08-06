@@ -1,4 +1,4 @@
-Flask>=2.0.0
-youtube_dl>=2021.05.16
+Flask>=2.0.1
+youtube_dl>=2021.6.6
 gunicorn>=20.1.0
 
